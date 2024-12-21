@@ -1,7 +1,7 @@
 [project]
 name = "frappe_elasticsearch"
 authors = [
-    { name = "Ahmed Emam", email = "ahmedemamhatem@gmail.com"}
+    { name = "Ahmed Emam", email = "ahmedemamhatem@gmail.com" }
 ]
 description = "Frappe Elasticsearch"
 requires-python = ">=3.10"
@@ -9,6 +9,7 @@ readme = "README.md"
 dynamic = ["version"]
 dependencies = [
     # "frappe~=15.0.0" # Installed and managed by bench.
+    "elasticsearch>=8.0.0" # Add Elasticsearch Python client here.
 ]
 
 [build-system]

@@ -5,6 +5,26 @@ app_description = "Frappe Elasticsearch"
 app_email = "ahmedemamhatem@gmail.com"
 app_license = "mit"
 
+
+# Fixtures for Custom Fields
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "or_filters": [
+            ["fieldname", "in", ["custom_elasticsearch"]]
+        ]
+    }
+]
+
+# Document Events
+doc_events = {
+    "Sales Invoice": {
+        "on_submit": "frappe_elasticsearch.tasks.index_sales_invoice"
+    },
+    "GL Entry": {
+        "after_insert": "frappe_elasticsearch.tasks.index_gl_entry"
+    }
+}
 # Apps
 # ------------------
 
